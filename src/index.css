@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+ :root {
+  --color-primary-dark: #0B9F94; /* Teal */
+  --color-primary-light: #00F6FF; /* Cyan */
+  --color-text-primary: #000000; /* Black */
+  --color-text-secondary: #4B4B4B; /* Gray */
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light));
+}
