@@ -33,7 +33,7 @@ export default function AboutUs() {
   const leaders = [
     {
       name: "AVINASH CHANDER",
-      role: "Director",
+      role: "DIRECTOR",
       img: "/Avinash.jpeg",
       description:
         "Mr. Avinash Chander, is an astute Electronic Patient Record (EPR) Systems Implementation Specialist who has led the digital transformation journeys of numerous healthcare organisations globally. A physiotherapist who brings over 16 years of healthcare experience and expertise in EPR implementations, hospital operations, quality and accreditation processes and digital healthcare consulting gained from a multitude of healthcare projects based in the US, India, the Middle East and the UK. He has successfully delivered EPR projects for leading healthcare institutions using Epic and other platforms, such as Siemens Soarian MedSuite and MDSynergy. ",
@@ -224,3 +224,4 @@ export default function AboutUs() {
     </div>
   );
 }
+
