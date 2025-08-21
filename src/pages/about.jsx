@@ -116,7 +116,7 @@ export default function AboutUs() {
             initial={{ x: -300, opacity: 0 }}
             animate={isVisible ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 1 }}
-            className="absolute w-48 h-48 md:w-64 md:h-64 bg-red-100 rounded-full flex items-center justify-center top-[13%] left-[8%] md:top-[13%] md:left-[-10%]"
+            className="absolute w-48 h-48 md:w-64 md:h-64 bg-red-100 rounded-full flex items-center justify-center top-[13%] left-[4%] md:top-[13%] md:left-[-10%]"
 
           >
             <span className="text-lg font-bold">Collaborative</span>
@@ -224,4 +224,5 @@ export default function AboutUs() {
     </div>
   );
 }
+
 
