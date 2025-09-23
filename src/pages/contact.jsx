@@ -27,7 +27,7 @@ const ContactPage = () => {
       const data = await res.json();
 
       if (res.ok) {
-        setStatus("✅ Message sent successfully!");
+        setStatus(" Message sent successfully!");
         setFormData({ name: "", email: "", telephone: "", message: "" });
       } else {
         setStatus(`❌ ${data.msg || "Something went wrong"}`);
@@ -134,18 +134,19 @@ const ContactPage = () => {
 
       {/* Map Section */}
       <section className="w-full h-[50vh]">
-        <iframe
-          title="Our Office Location"
-          src="http://maps.google.com/maps?q=Office%20120.3%20Regus,%20Cardinal%20Point,%20Park%20Road,%20Rickmansworth,%20WD3%201RE&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
-      </section>
+    <iframe
+    title="Our Office Location"
+    src="https://maps.google.com/maps?q=Office%20120.3%20Regus,%20Cardinal%20Point,%20Park%20Road,%20Rickmansworth,%20WD3%201RE&output=embed"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+     ></iframe>
+     </section>
     </>
   );
 };
 
 export default ContactPage;
+
