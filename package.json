@@ -10,16 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.4",
-    "@react-three/fiber": "^9.3.0",
     "@tailwindcss/vite": "^4.1.11",
+    "@tiptap/extension-highlight": "^3.4.3",
+    "@tiptap/extension-link": "^3.4.3",
+    "@tiptap/extension-text-align": "^3.4.3",
+    "@tiptap/extension-underline": "^3.4.3",
+    "@tiptap/react": "^3.4.3",
+    "@tiptap/starter-kit": "^3.4.3",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.536.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.1",
-    "tailwindcss": "^4.1.11",
-    "three": "^0.179.1"
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

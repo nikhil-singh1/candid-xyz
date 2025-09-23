@@ -7,6 +7,7 @@ const menuItems = [
   { label: 'About Us', path: '/aboutus' },
   { label: 'Our Services', path: '/services' },
   { label: 'Case Study and Articles', path: '/case_study' },
+    { label: 'Blogs', path: '/blogs' },
   { label: 'Contact', path: '/contact' },
 ];
 
