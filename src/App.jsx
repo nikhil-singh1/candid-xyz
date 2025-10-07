@@ -36,7 +36,7 @@ export default function App() {
              <Route path="/services" element={<ServicesPage/>}/>
               <Route path="/case_study" element={<CaseStudiesPage/>}/>
               <Route path="/our_people" element={<OurPeople/>}/>
-                  <Route path="/blogs" element={<Blog />} />
+                  <Route path="/articles" element={<Blog />} />
                   <Route path="/post/:slug" element={<PostView />} />
                   <Route path="/admin/login" element={<Login />} />
                    <Route path="/admin/dashboard" element={<Dashboard />} />
