@@ -6,8 +6,8 @@ const menuItems = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/aboutus' },
   { label: 'Our Services', path: '/services' },
-  { label: 'Case Study and Articles', path: '/case_study' },
-    { label: 'Blogs', path: '/blogs' },
+  { label: 'Case Studies', path: '/case_study' },
+    { label: 'Articles', path: '/blogs' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -96,5 +96,6 @@ const Header = () => {
     </header>
   );
 };
+
 
 export default Header;
