@@ -47,7 +47,7 @@ export default function Blog() {
       >
         <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-4">
           <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight">
-            Welcome to Our Blog
+            Welcome to Article Section
           </h1>
           <p className="text-slate-300 text-lg md:text-xl mt-4 max-w-2xl">
             Discover the latest articles, stories, and insights from our team.
@@ -110,4 +110,5 @@ export default function Blog() {
       </div>
     </div>
   );
+
 }
