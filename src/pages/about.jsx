@@ -53,6 +53,14 @@ export default function AboutUs() {
       description:
         "Amit is a pioneering figure in digital health with more than eighteen years of international experience. Amit spearheads innovation in AI, machine learning, and digital transformation in his role as Practice Head for Healthcare at ACCRO.  Throughout his career, Amit has held important positions at IBM, Accenture, and Deloitte, where he oversaw significant health IT projects in the USA, UK, and MEA. He made significant contributions to important initiatives including Abu Dhabi's Malaffi (Health Information Exchange) and Dubai's NABIDH, two cornerstones of the United Arab Emirates' integrated healthcare system. These technologies improve clinical decision-making and patient outcomes by facilitating safe, real-time data sharing between clinicians.  Amit, a specialist in IT business analysis, process automation, and project management, is an Epic-certified professional who ensures the smooth implementation of innovative solutions.   Fostering cross-border cooperation is another aspect of Amit's leadership.",
     },
+    {
+      name: "Dwaipayn",
+      role: "Healthcare IT consultant",
+      img: "/Dwaipayn.jpeg",
+      description:
+        "Dwaipayn is a seasoned Healthcare IT consultant with 12 years of experience specializing in Healthcare IT Strategy, Stakeholder Engagement, Team Leadership, and System Integration. He has successfully led complex, multi-site EMR implementations and optimization projects across the USA, UAE, and UK, driving digital transformation for leading organizations such as Deloitte, Dubai Health Authority, and Cleveland Clinic London. He excels in end-to-end project management, from requirements gathering and design documentation to system integration testing and ongoing solution enhancement. His expertise in interoperability standards like HL7 v2, XML, and X12, combined with hands-on experience in Rhapsody, Cloverleaf, Ensemble, and Epic Interconnect, positions him as a go-to expert in healthcare data integration and compliance. As an Epic-certified professional (Bridges Interface, Epic Gallery, HIM ROI, Data Courier Administrator, Security), Dwaipayn brings deep technical knowledge and a practical approach to EMR",
+    },
+   
   ];
 
   return (
@@ -142,7 +150,108 @@ export default function AboutUs() {
           </motion.div>
         </div>
       </section>
+   <section className="bg-gray-100 py-16 px-6 md:px-12 mt-10 rounded-xl max-w-7xl mx-auto">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      How We Deliver Impact
+    </h2>
+    <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+      Our methodology is shaped by deep healthcare expertise, operational excellence, and a relentless focus on outcomes.
+    </p>
+  </div>
 
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-[var(--color-primary-dark)]"
+    >
+      <h3 className="text-xl font-semibold mb-3 text-gray-800">
+        Fully Integrated Delivery Teams
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        We bring a fully integrated delivery team — not just individual resources — ensuring faster ramp-up, stronger knowledge retention, and smoother execution throughout your programme lifecycle.
+      </p>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-[var(--color-primary-dark)]"
+    >
+      <h3 className="text-xl font-semibold mb-3 text-gray-800">
+        Global Expertise, Local Understanding
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        We blend global best practices with deep healthcare domain knowledge — giving clients the best of both worlds.
+      </p>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-[var(--color-primary-dark)]"
+    >
+      <h3 className="text-xl font-semibold mb-3 text-gray-800">
+        NHS-Ready Partnerships
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        We’re plug-and-play for NHS Trusts — compliant, cost-effective, and framework-ready to accelerate your transformation journey.
+      </p>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-[var(--color-primary-dark)]"
+    >
+      <h3 className="text-xl font-semibold mb-3 text-gray-800">
+        Rapid Response for High-Stakes Projects
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Engage our rapid-response digital health team when timelines shrink and stakes rise — we ensure stability, speed, and success under pressure.
+      </p>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-[var(--color-primary-dark)] md:col-span-2"
+    >
+      <h3 className="text-xl font-semibold mb-3 text-gray-800">
+        Adoption Beyond Implementation
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        We don’t just implement systems — we ensure they’re adopted, optimized, and embraced by clinicians to drive real change in care delivery.
+      </p>
+    </motion.div>
+
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.5 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-md p-8 border-l-4 border-[var(--color-primary-dark)] md:col-span-2"
+    >
+      <h3 className="text-xl font-semibold mb-3 text-gray-800">
+        Modular, Flexible Advisory
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Our modular advisory model is built around your needs — from one-day strategy sessions to full programme support, we scale as your goals evolve.
+      </p>
+    </motion.div>
+  </div>
+</section>
         {/* Leadership Section */}
 <section className="py-16 ">
 
