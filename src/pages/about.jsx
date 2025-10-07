@@ -32,23 +32,23 @@ export default function AboutUs() {
 
   const leaders = [
     {
-      name: "AVINASH CHANDER",
+      name: "Avinash Chander",
       role: "Director",
       img: "/Avinash.jpeg",
       description:
         "Mr. Avinash Chander, is an astute Electronic Patient Record (EPR) Systems Implementation Specialist who has led the digital transformation journeys of numerous healthcare organisations globally. A physiotherapist who brings over 16 years of healthcare experience and expertise in EPR implementations, hospital operations, quality and accreditation processes and digital healthcare consulting gained from a multitude of healthcare projects based in the US, India, the Middle East and the UK. He has successfully delivered EPR projects for leading healthcare institutions using Epic and other platforms, such as Siemens Soarian MedSuite and MDSynergy. ",
     },
     {
-      name: "SANDRA SHANTANU",
-      role: "BUSINESS SUPPORT OFFICER",
+      name: "Sandra Shantanu",
+      role: "Business Support Officer",
       img: "Sandra.jpeg",
       description:
         "Sandra is a dedicated Business Support Officer with a strong background in sales, bringing a wealth of experience to her role. With a proven track record of providing exceptional administrative and operational support, Sandra has worked across various industries, helping streamline processes and improve efficiency. In her previous roles, she effectively managed client communications, processed orders, coordinated schedules, and ensured smooth interactions between sales teams and other departments. Sandra’s experience in sales has given her valuable insight into customer needs, allowing her to tailor support strategies that drive business growth. ",
     },
    
     {
-      name: "AMIT KUMAR BAJPAI",
-      role: "HONORARY ADVISOR",
+      name: "Amit Kumar Bajpai",
+      role: "Honorary Advisor",
       img: "Amit.jpeg",
       description:
         "Amit is a pioneering figure in digital health with more than eighteen years of international experience. Amit spearheads innovation in AI, machine learning, and digital transformation in his role as Practice Head for Healthcare at ACCRO.  Throughout his career, Amit has held important positions at IBM, Accenture, and Deloitte, where he oversaw significant health IT projects in the USA, UK, and MEA. He made significant contributions to important initiatives including Abu Dhabi's Malaffi (Health Information Exchange) and Dubai's NABIDH, two cornerstones of the United Arab Emirates' integrated healthcare system. These technologies improve clinical decision-making and patient outcomes by facilitating safe, real-time data sharing between clinicians.  Amit, a specialist in IT business analysis, process automation, and project management, is an Epic-certified professional who ensures the smooth implementation of innovative solutions.   Fostering cross-border cooperation is another aspect of Amit's leadership.",
@@ -59,7 +59,14 @@ export default function AboutUs() {
       img: "/Dwaipayn.jpeg",
       description:
         "Dwaipayn is a seasoned Healthcare IT consultant with 12 years of experience specializing in Healthcare IT Strategy, Stakeholder Engagement, Team Leadership, and System Integration. He has successfully led complex, multi-site EMR implementations and optimization projects across the USA, UAE, and UK, driving digital transformation for leading organizations such as Deloitte, Dubai Health Authority, and Cleveland Clinic London. He excels in end-to-end project management, from requirements gathering and design documentation to system integration testing and ongoing solution enhancement. His expertise in interoperability standards like HL7 v2, XML, and X12, combined with hands-on experience in Rhapsody, Cloverleaf, Ensemble, and Epic Interconnect, positions him as a go-to expert in healthcare data integration and compliance. As an Epic-certified professional (Bridges Interface, Epic Gallery, HIM ROI, Data Courier Administrator, Security), Dwaipayn brings deep technical knowledge and a practical approach to EMR implementation and training. He is passionate about building capable teams, ensuring knowledge transfer, and empowering organizations to navigate the evolving digital healthcare landscape."},
-   
+
+        {
+      name: "Poornima",
+      role: "Healthcare IT consultant",
+      img: "Poornima.jpeg",
+      description:
+        "Poornima is an accomplished Healthcare IT Consultant with over 11 years of experience driving the implementation, optimization, and delivery of complex healthcare systems. She has successfully managed the full project lifecycle—from initial scoping and workflow analysis to seamless go-live and post-implementation stabilization—ensuring that technology empowers clinical and operational excellence. As an Epic-certified analyst (Inpatient Procedure Orders, Clinical Documentation, and ASAP), Poornima is skilled at translating business requirements into intuitive, efficient, and compliant system configurations. Her expertise lies in bridging the gap between clinical workflows and technical solutions, enabling healthcare organizations to achieve streamlined operations and meet regulatory standards. With proven success across healthcare systems in both the UK and US, she brings a strong mix of business analysis, problem-solving, and leadership skills. Poornima thrives in collaborative, team-oriented environments, while equally confident in stepping into leadership roles to guide projects to success. Passionate about transforming healthcare through digital innovation, she is dedicated to helping organizations optimize performance, enhance patient care, and navigate the ever-evolving landscape of healthcare IT.."
+        },
   ];
 
   return (
@@ -329,4 +336,5 @@ export default function AboutUs() {
     </div>
   );
 }
+
 
