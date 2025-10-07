@@ -7,7 +7,7 @@ const menuItems = [
   { label: 'About Us', path: '/aboutus' },
   { label: 'Our Services', path: '/services' },
   { label: 'Case Studies', path: '/case_study' },
-    { label: 'Articles', path: '/blogs' },
+    { label: 'Articles', path: '/articles' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -99,3 +99,4 @@ const Header = () => {
 
 
 export default Header;
+
