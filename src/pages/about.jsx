@@ -58,8 +58,7 @@ export default function AboutUs() {
       role: "Healthcare IT consultant",
       img: "/Dwaipayn.jpeg",
       description:
-        "Dwaipayn is a seasoned Healthcare IT consultant with 12 years of experience specializing in Healthcare IT Strategy, Stakeholder Engagement, Team Leadership, and System Integration. He has successfully led complex, multi-site EMR implementations and optimization projects across the USA, UAE, and UK, driving digital transformation for leading organizations such as Deloitte, Dubai Health Authority, and Cleveland Clinic London. He excels in end-to-end project management, from requirements gathering and design documentation to system integration testing and ongoing solution enhancement. His expertise in interoperability standards like HL7 v2, XML, and X12, combined with hands-on experience in Rhapsody, Cloverleaf, Ensemble, and Epic Interconnect, positions him as a go-to expert in healthcare data integration and compliance. As an Epic-certified professional (Bridges Interface, Epic Gallery, HIM ROI, Data Courier Administrator, Security), Dwaipayn brings deep technical knowledge and a practical approach to EMR",
-    },
+        "Dwaipayn is a seasoned Healthcare IT consultant with 12 years of experience specializing in Healthcare IT Strategy, Stakeholder Engagement, Team Leadership, and System Integration. He has successfully led complex, multi-site EMR implementations and optimization projects across the USA, UAE, and UK, driving digital transformation for leading organizations such as Deloitte, Dubai Health Authority, and Cleveland Clinic London. He excels in end-to-end project management, from requirements gathering and design documentation to system integration testing and ongoing solution enhancement. His expertise in interoperability standards like HL7 v2, XML, and X12, combined with hands-on experience in Rhapsody, Cloverleaf, Ensemble, and Epic Interconnect, positions him as a go-to expert in healthcare data integration and compliance. As an Epic-certified professional (Bridges Interface, Epic Gallery, HIM ROI, Data Courier Administrator, Security), Dwaipayn brings deep technical knowledge and a practical approach to EMR implementation and training. He is passionate about building capable teams, ensuring knowledge transfer, and empowering organizations to navigate the evolving digital healthcare landscape."},
    
   ];
 
@@ -330,3 +329,4 @@ export default function AboutUs() {
     </div>
   );
 }
+
