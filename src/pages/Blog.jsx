@@ -38,7 +38,6 @@ export default function Blog() {
 
   return (
     <div className="bg-slate-50 min-h-screen">
-        <div className="absolute inset-0 bg-[var(--color-primary-dark)] opacity-60"></div>
       {/* --- Hero Section --- */}
       <div
         className="relative h-[250px] md:h-96 w-full bg-cover bg-center"
@@ -46,6 +45,7 @@ export default function Blog() {
           backgroundImage: `url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop')`,
         }}
       >
+        <div className="absolute inset-0 bg-[var(--color-primary-dark)] opacity-60"></div>
         <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-4">
           <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight">
             Welcome to Article Section
@@ -113,4 +113,5 @@ export default function Blog() {
   );
 
 }
+
 
