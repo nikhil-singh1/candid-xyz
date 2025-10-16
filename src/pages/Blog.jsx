@@ -48,10 +48,10 @@ export default function Blog() {
         <div className="absolute inset-0 bg-[var(--color-primary-dark)] opacity-60"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
           <div className="text-sm md:text-xl font-light mb-2">
-            Health-Care Leadership 
+            Latest Insights 
           </div>
           <h1 className="text-4xl md:text-6xl font-serif font-bold px-4">
-            WHO WE ARE 
+           ARTICLES & STORIES
           </h1>
         </div>
       </div>
@@ -113,6 +113,7 @@ export default function Blog() {
   );
 
 }
+
 
 
 
