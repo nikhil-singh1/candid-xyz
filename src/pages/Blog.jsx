@@ -47,11 +47,11 @@ export default function Blog() {
       >
         <div className="absolute inset-0 bg-[var(--color-primary-dark)] opacity-60"></div>
         <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-4">
-          <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight">
-            Welcome to Article Section
+          <h1 className="text-white text-sm md:text-xl font-extrabold leading-tight">
+           Latest Insights
           </h1>
-          <p className="text-slate-300 text-lg md:text-xl mt-4 max-w-2xl">
-            Discover the latest articles, stories, and insights from our team.
+          <p className="text-slate-300 text-4xl md:text-6xl mt-4 max-w-2xl">
+            ARTICLES & STORIES
           </p>
         </div>
       </div>
@@ -113,5 +113,6 @@ export default function Blog() {
   );
 
 }
+
 
 
