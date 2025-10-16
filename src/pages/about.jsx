@@ -178,7 +178,7 @@ export default function AboutUs() {
         Fully Integrated Delivery Teams
       </h3>
       <p className="text-gray-600 leading-relaxed">
-        We bring a fully integrated delivery team — not just individual resources — ensuring faster ramp-up, stronger knowledge retention, and smoother execution throughout your programme lifecycle.
+       We bring a fully integrated delivery team, not just individual resources, ensuring faster ramp up, stronger knowledge retention, and smoother execution throughout your programme lifecycle.
       </p>
     </motion.div>
 
@@ -193,7 +193,7 @@ export default function AboutUs() {
         Global Expertise, Local Understanding
       </h3>
       <p className="text-gray-600 leading-relaxed">
-        We blend global best practices with deep healthcare domain knowledge — giving clients the best of both worlds.
+       We blend global best practices with deep healthcare domain knowledge, giving clients the best of both worlds.
       </p>
     </motion.div>
 
@@ -208,7 +208,7 @@ export default function AboutUs() {
         NHS-Ready Partnerships
       </h3>
       <p className="text-gray-600 leading-relaxed">
-        We’re plug-and-play for NHS Trusts — compliant, cost-effective, and framework-ready to accelerate your transformation journey.
+        We’re plug and play for NHS Trusts - compliant, cost effective, and framework ready to accelerate your transformation journey.
       </p>
     </motion.div>
 
@@ -223,7 +223,7 @@ export default function AboutUs() {
         Rapid Response for High-Stakes Projects
       </h3>
       <p className="text-gray-600 leading-relaxed">
-        Engage our rapid-response digital health team when timelines shrink and stakes rise — we ensure stability, speed, and success under pressure.
+        Engage our rapid response digital health team when timelines shrink and stakes rise - we ensure stability, speed, and success under pressure.
       </p>
     </motion.div>
 
@@ -238,7 +238,7 @@ export default function AboutUs() {
         Adoption Beyond Implementation
       </h3>
       <p className="text-gray-600 leading-relaxed">
-        We don’t just implement systems — we ensure they’re adopted, optimized, and embraced by clinicians to drive real change in care delivery.
+        We don’t just implement systems, we ensure they’re adopted, optimized, and embraced by clinicians to drive real change in care delivery.
       </p>
     </motion.div>
 
@@ -253,7 +253,7 @@ export default function AboutUs() {
         Modular, Flexible Advisory
       </h3>
       <p className="text-gray-600 leading-relaxed">
-        Our modular advisory model is built around your needs — from one-day strategy sessions to full programme support, we scale as your goals evolve.
+        Our modular advisory model is built around your needs, from one day strategy sessions to full programme support - we scale as your goals evolve.
       </p>
     </motion.div>
   </div>
@@ -336,5 +336,6 @@ export default function AboutUs() {
     </div>
   );
 }
+
 
 
