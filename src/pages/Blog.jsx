@@ -38,6 +38,7 @@ export default function Blog() {
 
   return (
     <div className="bg-slate-50 min-h-screen">
+        <div className="absolute inset-0 bg-[var(--color-primary-dark)] opacity-60"></div>
       {/* --- Hero Section --- */}
       <div
         className="relative h-[250px] md:h-96 w-full bg-cover bg-center"
@@ -112,3 +113,4 @@ export default function Blog() {
   );
 
 }
+
