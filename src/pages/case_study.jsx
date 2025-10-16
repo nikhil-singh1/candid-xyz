@@ -219,13 +219,14 @@ export default function CaseStudiesPag() {
           backgroundImage: `url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop')`,
         }}
       >
-        <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center p-4">
-          <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight">
-            Our Success Stories
+       <div className="absolute inset-0 bg-[var(--color-primary-dark)] opacity-60"></div>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
+          <div className="text-sm md:text-xl font-light mb-2">
+            Real Stories, Real Outcomes 
+          </div>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold px-4">
+           CASE STUDIES
           </h1>
-          <p className="text-slate-300 text-lg md:text-xl mt-4 max-w-2xl">
-            Explore how we've partnered with clients to overcome challenges and achieve remarkable results.
-          </p>
         </div>
       </div>
 
@@ -294,3 +295,4 @@ export default function CaseStudiesPag() {
     </div>
   );
 }
+
