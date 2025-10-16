@@ -7,7 +7,7 @@ const logos = [
   "/DELL.png", "/Stanford.png", "/CHI.png",
   "/Cleaveland.png", "/NHS.png", "/FairyHealth.png",
   "/Deloitee.png", "/Jefferson Health.png", "/Northern Health.png",
-  "/Royal Devon.png", "/ASCENSION HEALTH.png", "/Dubai Health.png",
+  "/Royal Devon.png", "/ASCENSION HEALTH.png", "/Dubai Health.png", "/ico.jpeg", "/procurement.jpeg", "cyber.jpeg"
 ];
 
 // --- A simple hook to check if the screen is mobile ---
@@ -123,4 +123,5 @@ export default function Clients() {
       )}
     </section>
   );
+
 }
