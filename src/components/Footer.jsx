@@ -40,8 +40,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-gray-300 mb-4">Get in Touch</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>info@candidhsc.com</li>
-              <li>+44 1234 567890</li>
+              <li>sandrashantanu@candidhsc.co.uk</li>
+              <li>+44 7448652321</li>
             </ul>
           </div>
 
@@ -71,5 +71,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;
