@@ -84,7 +84,7 @@ export default function PostView() {
 
         {/* Sidebar */}
         <aside className="space-y-6 lg:col-span-1">
-          <h2 className="text-xl font-bold">Read More Blogs</h2>
+          <h2 className="text-xl font-bold">Read More Articles</h2>
           {otherPosts
             .filter((ob) => ob.slug !== post.slug)
             .map((ob) => (
@@ -115,3 +115,4 @@ export default function PostView() {
     </div>
   );
 }
+
