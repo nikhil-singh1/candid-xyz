@@ -10,9 +10,6 @@ const accreditations = [
 const OurAccreditationsSection = () => {
   return (
     <section className="relative overflow-hidden py-20 bg-[var(--color-primary-dark)] backdrop-blur-md">
-      {/* Animated Gradient Background */}
-      {/* <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-r from-[var(--color-primary-light)]/20 via-white to-[var(--color-primary-dark)]/10 opacity-60"></div> */}
-
       {/* Title */}
       <div className="text-center mb-12">
         <motion.h2
@@ -35,8 +32,8 @@ const OurAccreditationsSection = () => {
         </motion.p>
       </div>
 
-      {/* Logos */}
-      <div className="container mx-auto flex flex-wrap justify-center items-center gap-10 px-6">
+      {/* Desktop View (with grayscale animation) */}
+      <div className="hidden md:flex container mx-auto flex-wrap justify-center items-center gap-10 px-6">
         {accreditations.map((item, index) => (
           <motion.div
             key={index}
@@ -49,15 +46,31 @@ const OurAccreditationsSection = () => {
             <img
               src={item.src}
               alt={item.alt}
-              className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition duration-500"
+              className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition duration-700 ease-in-out"
             />
           </motion.div>
         ))}
       </div>
 
-      {/* Floating animation background elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-[var(--color-primary-light)]/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-40 h-40 bg-[var(--color-primary-dark)]/20 rounded-full blur-2xl animate-pulse delay-2000"></div>
+      {/* Mobile View (static full-color logos) */}
+      <div className="flex md:hidden container mx-auto flex-wrap justify-center items-center gap-10 px-6">
+        {accreditations.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl shadow-lg p-6 transition-all duration-300"
+          >
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="h-24 w-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Floating animation background elements (only visible on large screens) */}
+      <div className="hidden md:block absolute top-10 left-10 w-32 h-32 bg-[var(--color-primary-light)]/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="hidden md:block absolute bottom-10 right-10 w-40 h-40 bg-[var(--color-primary-dark)]/20 rounded-full blur-2xl animate-pulse delay-2000"></div>
     </section>
   );
 };
