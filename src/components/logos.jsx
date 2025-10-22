@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 // --- LOGO DATA ---
 const logos = [
   "/ACCENTURE.png",
-  "/DELL.png", "/Stanford.png", "/CHI.png", "malai.jpg", "manchester.jpg", "hsc.jpg", "fortis.jpg", 
+  "/DELL.png", "/Stanford.png", "/CHI.png", "malai.jpeg", "manchester.jpeg", "hsc.jpeg", "fortis.jpeg", 
   "/Cleaveland.png", "/NHS.png", "/FairyHealth.png",
   "/Deloitee.png",
   "/Royal Devon.png", "/Dubai Health.png"
@@ -125,6 +125,7 @@ export default function Clients() {
   );
 
 }
+
 
 
 
