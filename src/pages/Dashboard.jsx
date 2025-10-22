@@ -80,7 +80,7 @@ export default function Dashboard() {
             className="bg-teal-600 text-white px-5 py-2.5 rounded-lg shadow hover:bg-teal-700 transition-colors flex items-center gap-2 mt-4 sm:mt-0"
           >
             <PlusCircle size={20} />
-            Create New Blogs
+            Create New Articles
           </Link>
         </div>
 
@@ -88,7 +88,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <StatCard
             icon={<FileText className="text-teal-800" size={24} />}
-            title="Total Blogs"
+            title="Total Articles"
             value={postCount}
             color="bg-teal-100"
           />
@@ -104,17 +104,17 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <ActionCard
             icon={<FileText className="text-teal-600" size={24} />}
-            title="Manage Blog"
-            description="View, edit, or delete existing blogs. Keep your content up-to-date."
+            title="Manage Articles"
+            description="View, edit, or delete existing articles. Keep your content up-to-date."
             to="/admin/posts"
-            buttonText="View All Blogs"
+            buttonText="View All Articles"
           />
           <ActionCard
             icon={<Mail className="text-purple-600" size={24} />}
-            title="Manage Contacts"
+            title="View Contact Queries"
             description="View all customer queries submitted through the website."
             to="/admin/contact"
-            buttonText="View Contacts"
+            buttonText="View Queries"
           />
 
           {/* Only for Super Admin */}
@@ -132,3 +132,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
