@@ -96,9 +96,9 @@ function LogoRow({ logos, direction = "left", speed = 50 }) {
 export default function Clients() {
   const isMobile = useIsMobile();
 
-  const column1 = logos.slice(0, 6);
-  const column2 = logos.slice(6, 12);
-  const column3 = logos.slice(12, 18);
+  const column1 = logos.slice(0, 5);
+  const column2 = logos.slice(5, 10);
+  const column3 = logos.slice(10, 14);
 
   return (
     <section className="py-10 bg-white">
@@ -125,6 +125,7 @@ export default function Clients() {
   );
 
 }
+
 
 
 
