@@ -9,7 +9,7 @@ const accreditations = [
 
 const OurAccreditationsSection = () => {
   return (
-    <section className="relative overflow-hidden py-20 bg-[var(--color-primary-light)]/10 backdrop-blur-md">
+    <section className="relative overflow-hidden py-20 bg-[var(--color-primary-dark)] backdrop-blur-md">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-r from-[var(--color-primary-light)]/20 via-white to-[var(--color-primary-dark)]/10 opacity-60"></div>
 
