@@ -7,6 +7,7 @@ import OurThinkingSection from '../components/OurThinkingSection';
 import StoriesOfImpactSection from '../components/StoriesOfImpactSection';
 import ExploreIndustrySection from '../components/ExploreIndustrySection';
 import GetInTouchSection from '../components/GetInTouchSection';
+import OurAccreditationsSection from "../components/OurAccreditationsSection";
 import Logos from '../components/logos';
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <AchievementsSection />
       {/* <OurThinkingSection /> */}
       <StoriesOfImpactSection />
+       <OurAccreditationsSection />
       <Logos />
       {/* <ExploreIndustrySection /> */}
       {/* <GetInTouchSection /> */}
@@ -28,3 +30,4 @@ const Home = () => {
 };
 
 export default Home;
+
