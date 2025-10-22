@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 // --- LOGO DATA ---
 const logos = [
-  "/ACCENTURE.png", "/Tenet Health.png", "/Centura Health.png",
+  "/ACCENTURE.png",
   "/DELL.png", "/Stanford.png", "/CHI.png",
   "/Cleaveland.png", "/NHS.png", "/FairyHealth.png",
-  "/Deloitee.png", "/Jefferson Health.png", "/Northern Health.png",
-  "/Royal Devon.png", "/ASCENSION HEALTH.png", "/Dubai Health.png", "/ico.jpeg", "/procurement.jpeg", "cyber.jpeg"
+  "/Deloitee.png",
+  "/Royal Devon.png", "/Dubai Health.png"
 ];
 
 // --- A simple hook to check if the screen is mobile ---
@@ -125,4 +125,5 @@ export default function Clients() {
   );
 
 }
+
 
