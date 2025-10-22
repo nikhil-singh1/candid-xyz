@@ -20,7 +20,7 @@ const OurAccreditationsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-semibold text-white"
+          className="text-3xl md:text-4xl font-bold text-white"
         >
           Our Accreditations
         </motion.h2>
@@ -29,7 +29,7 @@ const OurAccreditationsSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-gray-600 mt-2"
+          className="text-gray-200 mt-2 font-semibold"
         >
           Certified and trusted by global organizations for excellence and integrity.
         </motion.p>
