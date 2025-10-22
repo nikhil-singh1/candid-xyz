@@ -20,7 +20,7 @@ const OurAccreditationsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-semibold text-[var(--color-text-secondary)]"
+          className="text-3xl md:text-4xl font-semibold text-white"
         >
           Our Accreditations
         </motion.h2>
