@@ -206,3 +206,80 @@ export const deleteUser = async (id) => {
   }
   return res.json();
 };
+
+
+
+/* ------------------------ CASE STUDY ------------------------ */
+// Public
+
+export const getCases = async () => {
+  // Fetches from the /api/case-study route
+  const res = await fetch(`${API_URL}/case-study`); 
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.msg || "Failed to fetch case studies");
+  }
+  return res.json();
+};
+
+export const getCase = async (slug) => {
+  // Fetches from the /api/case-study route
+  const res = await fetch(`${API_URL}/case-study/${slug}`);
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.msg || "Failed to fetch case study");
+  }
+  return res.json();
+};
+
+// Protected
+export const createCase = async (postData) => {
+  // Creates at the /api/case-study route
+  const res = await fetch(`${API_URL}/case-study`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify(postData),
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.msg || "Failed to create case study");
+  }
+  return res.json();
+};
+
+export const updateCase = async (id, postData) => {
+  // Updates at the /api/case-study route
+  const res = await fetch(`${API_URL}/case-study/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify(postData),
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.msg || "Failed to update case study");
+  }
+  return res.json();
+};
+
+export const deleteCase = async (id) => {
+  // Deletes from the /api/case-study route
+  const res = await fetch(`${API_URL}/case-study/${id}`, {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${getToken()}` },
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.msg || "Failed to delete case study");
+  }
+  return res.json();
+};
+
