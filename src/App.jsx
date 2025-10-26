@@ -19,6 +19,10 @@ import ManagePosts from './pages/ManagePosts'; // Import the new page
 import EditPost from './pages/EditPost';     
 import ContactPage from "./pages/ContactPage"; 
 import UsersPage from './pages/UsersPage';
+import NewCase from './pages/NewCases';
+import EditCase from './pages/EditCase';
+import ManageCases from './pages/ManageCases';
+import CaseView from './pages/CaseView';
 
 
 export default function App() {
@@ -41,6 +45,10 @@ export default function App() {
                   <Route path="/admin/login" element={<Login />} />
                    <Route path="/admin/dashboard" element={<Dashboard />} />
                   <Route path="/admin/new" element={<NewPost />} />
+             <Route path="/case-study/:slug" element={<CaseView />} />
+            <Route path="/admin/cases" element={<ManageCases />} />
+            <Route path="/admin/edit-case/:slug" element={<EditCase />} />
+            <Route path="/admin/newcase" element={<NewCase />} />
            <Route path="/admin/posts" element={<ManagePosts />} />
         <Route path="/admin/edit/:slug" element={<EditPost />} />
         <Route path="/admin/contact" element={<ContactPage />} />
