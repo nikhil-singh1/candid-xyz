@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 const HeroSection = () => {
-  // 👇 your 3 images here
+  const navigate = useNavigate(); 
+  //  3 images here
   const images = [
     "/hero1.png",
     "/hero2.png",
@@ -31,11 +33,18 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
             {/* Primary button */}
-            <button className="bg-black text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[var(--color-primary-dark)] transition-all duration-300 transform hover:scale-105">
+            <button
+              onClick={() => navigate("/contact")} // Navigate to Contact page
+              className="bg-black text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-[var(--color-primary-dark)] transition-all duration-300 transform hover:scale-105"
+            >
               Contact us
             </button>
-            {/* Secondary button */}
-            <button className="bg-transparent text-white font-semibold py-3 px-8 rounded-full border border-white hover:bg-white hover:text-[var(--color-primary-dark)] transition-all duration-300 transform hover:scale-105">
+
+            {/* Submit RFP button */}
+            <button
+              onClick={() => navigate("/submit-rfp")} // Navigate to Submit RFP page
+              className="bg-transparent text-white font-semibold py-3 px-8 rounded-full border border-white hover:bg-white hover:text-[var(--color-primary-dark)] transition-all duration-300 transform hover:scale-105"
+            >
               Submit RFP
             </button>
           </div>
@@ -76,3 +85,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
