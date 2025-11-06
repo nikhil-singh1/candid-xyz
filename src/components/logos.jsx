@@ -126,7 +126,6 @@
 
 // }
 
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -148,35 +147,63 @@ const logos = [
   "/Dubai Health.png",
 ];
 
-// --- Hook: Detect mobile screen ---
+// --- A simple hook to check if the screen is mobile ---
 const useIsMobile = (breakpoint = 768) => {
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < breakpoint);
-    };
-
+    const checkScreenSize = () => setIsMobile(window.innerWidth < breakpoint);
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
   }, [breakpoint]);
-
   return isMobile;
 };
 
-// --- Smooth Vertical Scroll (Mobile) ---
-function LogoColumn({ logos, direction = "down", speed = 40 }) {
+// --- SMOOTH HORIZONTAL SCROLL (NO JERK) ---
+function SmoothLogoRow({ logos, direction = "left", speed = 30 }) {
   const duplicatedLogos = [...logos, ...logos];
-  const moveDistance = "-50%";
+
+  // motion.x animates continuously in a loop — no reset jump
+  const distance = direction === "left" ? "-50%" : "50%";
+
+  return (
+    <div className="overflow-hidden w-full py-6 relative">
+      <motion.div
+        className="flex flex-row gap-12"
+        animate={{ x: [0, distance] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: speed,
+            ease: "linear",
+          },
+        }}
+        style={{ willChange: "transform" }}
+      >
+        {duplicatedLogos.map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt="client logo"
+            className="h-24 w-auto object-contain flex-shrink-0"
+          />
+        ))}
+      </motion.div>
+    </div>
+  );
+}
+
+// --- SMOOTH VERTICAL SCROLL (for Mobile) ---
+function SmoothLogoColumn({ logos, direction = "down", speed = 30 }) {
+  const duplicatedLogos = [...logos, ...logos];
+  const distance = direction === "down" ? "50%" : "-50%";
 
   return (
     <div className="overflow-hidden h-[400px] w-40 mx-2 md:mx-4 relative">
       <motion.div
         className="flex flex-col gap-8"
-        animate={{
-          y: direction === "down" ? [0, moveDistance] : [moveDistance, 0],
-        }}
+        animate={{ y: [0, distance] }}
         transition={{
           y: {
             repeat: Infinity,
@@ -193,7 +220,6 @@ function LogoColumn({ logos, direction = "down", speed = 40 }) {
             src={logo}
             alt="client logo"
             className="h-32 w-auto object-contain"
-            loading="lazy"
           />
         ))}
       </motion.div>
@@ -201,43 +227,7 @@ function LogoColumn({ logos, direction = "down", speed = 40 }) {
   );
 }
 
-// --- Smooth Horizontal Scroll (Desktop) ---
-function LogoRow({ logos, direction = "left", speed = 50 }) {
-  const duplicatedLogos = [...logos, ...logos];
-  const moveDistance = "-50%";
-
-  return (
-    <div className="overflow-hidden w-full h-auto relative py-4">
-      <motion.div
-        className="flex flex-row gap-12"
-        animate={{
-          x: direction === "left" ? [0, moveDistance] : [moveDistance, 0],
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: speed,
-            ease: "linear",
-          },
-        }}
-        style={{ willChange: "transform" }}
-      >
-        {duplicatedLogos.map((logo, i) => (
-          <img
-            key={i}
-            src={logo}
-            alt="client logo"
-            className="h-24 object-contain flex-shrink-0"
-            loading="lazy"
-          />
-        ))}
-      </motion.div>
-    </div>
-  );
-}
-
-// --- MAIN CLIENTS COMPONENT ---
+// --- MAIN COMPONENT ---
 export default function Clients() {
   const isMobile = useIsMobile();
 
@@ -252,24 +242,20 @@ export default function Clients() {
       </h2>
 
       {isMobile ? (
-        // --- Mobile View: 3 Vertical Scrolling Columns ---
+        // --- Mobile: Vertical Scroll ---
         <div className="flex justify-center">
-          <LogoColumn logos={column1} direction="down" speed={25} />
-          <LogoColumn logos={column2} direction="up" speed={25} />
-          <LogoColumn logos={column3} direction="down" speed={25} />
+          <SmoothLogoColumn logos={column1} direction="down" speed={20} />
+          <SmoothLogoColumn logos={column2} direction="up" speed={20} />
+          <SmoothLogoColumn logos={column3} direction="down" speed={20} />
         </div>
       ) : (
-        // --- Desktop View: 3 Smooth Horizontal Rows ---
-        <div className="container mx-auto px-4 flex flex-col gap-4">
-          <LogoRow logos={column1} direction="left" speed={25} />
-          <LogoRow logos={column2} direction="right" speed={25} />
-          <LogoRow logos={column3} direction="left" speed={25} />
+        // --- Desktop: Horizontal Scroll ---
+        <div className="container mx-auto px-4 flex flex-col gap-6">
+          <SmoothLogoRow logos={column1} direction="left" speed={30} />
+          <SmoothLogoRow logos={column2} direction="right" speed={30} />
+          <SmoothLogoRow logos={column3} direction="left" speed={30} />
         </div>
       )}
     </section>
   );
 }
-
-
-
-
