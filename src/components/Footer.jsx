@@ -125,7 +125,7 @@ const Footer = () => {
                 
 {/* Bottom bar with copyright and social icons */}
 <div className="border-t border-gray-700 pt-8 flex flex-col items-center space-y-4 sm:space-y-0 sm:flex-col text-center">
-  <div className="text-sm md:text-lg text-gray-400">
+  <div className="text-sm md:text-lg text-gray-400 font-semibold">
     &copy; {new Date().getFullYear()} Candid HealthSystems Consultants Ltd. All rights reserved.
   </div>
 
@@ -173,6 +173,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 
