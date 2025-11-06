@@ -132,7 +132,7 @@ const Footer = () => {
   {/* LinkedIn Icon */}
   <div className="flex justify-center mt-4">
     <a 
-      href="https://www.linkedin.com/company/candid-hsc/" 
+      href="http://linkedin.com/company/candid-healthsystems-consultants-limited/" 
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="LinkedIn"
@@ -173,6 +173,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 
