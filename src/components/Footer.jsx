@@ -130,7 +130,7 @@ const Footer = () => {
   </div>
 
   {/* LinkedIn Icon */}
-  <div className="flex justify-center mt-2">
+  <div className="flex justify-center mt-4">
     <a 
       href="https://www.linkedin.com/company/candid-hsc/" 
       target="_blank" 
@@ -154,7 +154,7 @@ const Footer = () => {
   </div>
 
   {/* Powered by */}
-  <div className="text-sm md:text-lg font-semibold text-white mt-2">
+  <div className="text-sm md:text-lg font-semibold text-white mt-4">
     Powered by{' '}
     <a
       href="https://yuktic.com"
@@ -173,6 +173,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 
