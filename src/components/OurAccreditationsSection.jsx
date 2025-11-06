@@ -80,8 +80,6 @@
 
 
 
-
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -116,7 +114,7 @@ const OurAccreditationsSection = () => {
         </motion.p>
       </div>
 
-      {/* Desktop & Laptop View (grayscale + color transition) */}
+      {/* Desktop View (always colored logos) */}
       <div className="hidden md:flex container mx-auto flex-wrap justify-center items-center gap-10 px-6">
         {accreditations.map((item, index) => (
           <motion.div
@@ -125,12 +123,12 @@ const OurAccreditationsSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-500"
+            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300"
           >
             <img
               src={item.src}
               alt={item.alt}
-              className="h-24 w-auto object-contain filter grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700 ease-in-out"
+              className="h-24 w-auto object-contain transition duration-700 ease-in-out"
             />
           </motion.div>
         ))}
@@ -152,7 +150,7 @@ const OurAccreditationsSection = () => {
         ))}
       </div>
 
-      {/* Floating animation background elements (only visible on large screens) */}
+      {/* Floating background elements (only visible on large screens) */}
       <div className="hidden md:block absolute top-10 left-10 w-32 h-32 bg-[var(--color-primary-light)]/30 rounded-full blur-3xl animate-pulse"></div>
       <div className="hidden md:block absolute bottom-10 right-10 w-40 h-40 bg-[var(--color-primary-dark)]/20 rounded-full blur-2xl animate-pulse delay-2000"></div>
     </section>
@@ -160,4 +158,3 @@ const OurAccreditationsSection = () => {
 };
 
 export default OurAccreditationsSection;
-
