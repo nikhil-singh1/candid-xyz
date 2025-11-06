@@ -11,3 +11,53 @@
 .bg-primary-gradient {
   background: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light));
 }
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Tailwind utility bindings */
+.animate-scrollLeft {
+  animation: scrollLeft linear infinite;
+}
+.animate-scrollRight {
+  animation: scrollRight linear infinite;
+}
+.animate-scrollUp {
+  animation: scrollUp linear infinite;
+}
+.animate-scrollDown {
+  animation: scrollDown linear infinite;
+}
