@@ -59,6 +59,8 @@ export default function App() {
         <Route path="/rfp" element={<RFPForm />} />
         // Admin route (protected)
         <Route path="/admin/rfp" element={<RFPList />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
 
           
     </Routes>
