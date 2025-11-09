@@ -23,6 +23,8 @@ import NewCase from './pages/NewCases';
 import EditCase from './pages/EditCase';
 import ManageCases from './pages/ManageCases';
 import CaseView from './pages/CaseView';
+import RFPForm from './pages/RFPForm';
+import RFPList from './pages/RFPList';
 
 
 export default function App() {
