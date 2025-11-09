@@ -137,7 +137,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getPosts, getContacts, getCases } from '../utils/api';
+import { getPosts, getContacts, getCases, getRFPs } from '../utils/api';
 import {
   LayoutDashboard,
   FileText,
@@ -181,6 +181,7 @@ export default function Dashboard() {
   // --- ADDED: State for case studies ---
   const [caseCount, setCaseCount] = useState(0);
   const [contactCount, setContactCount] = useState(0);
+  const [rfpCount, setRfpCount] = useState(0);
   const [role, setRole] = useState("");
 
   useEffect(() => {
@@ -325,6 +326,7 @@ export default function Dashboard() {
   </div>
   );
 }
+
 
 
 
