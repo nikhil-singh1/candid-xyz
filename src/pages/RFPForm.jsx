@@ -42,7 +42,7 @@ export default function RFPForm() {
 
     try {
       await createRFP(formData);
-      setMsg("✅ Request submitted successfully!");
+      setMsg(" Request submitted successfully!");
       setFormData({
         sector: "",
         contactName: "",
@@ -238,7 +238,7 @@ export default function RFPForm() {
           {msg && (
             <p
               className={`text-center font-medium ${
-                msg.startsWith("✅") ? "text-green-600" : "text-red-600"
+                msg.startsWith("") ? "text-green-600" : "text-red-600"
               }`}
             >
               {msg}
