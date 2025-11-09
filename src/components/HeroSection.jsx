@@ -42,7 +42,7 @@ const HeroSection = () => {
 
             {/* Submit RFP button */}
             <button
-              onClick={() => navigate("/submit-rfp")} // Navigate to Submit RFP page
+              onClick={() => navigate("/rfp")} // Navigate to Submit RFP page
               className="bg-transparent text-white font-semibold py-3 px-8 rounded-full border border-white hover:bg-white hover:text-[var(--color-primary-dark)] transition-all duration-300 transform hover:scale-105"
             >
               Submit RFP
@@ -85,4 +85,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
