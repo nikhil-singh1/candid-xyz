@@ -12,38 +12,39 @@
   background: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light));
 }
 
+
 @keyframes scrollLeft {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(-100%);
   }
 }
 
 @keyframes scrollRight {
-  0% {
-    transform: translateX(-50%);
+  from {
+    transform: translateX(-100%);
   }
-  100% {
+  to {
     transform: translateX(0);
   }
 }
 
 @keyframes scrollUp {
-  0% {
+  from {
     transform: translateY(0);
   }
-  100% {
-    transform: translateY(-50%);
+  to {
+    transform: translateY(-100%);
   }
 }
 
 @keyframes scrollDown {
-  0% {
-    transform: translateY(-50%);
+  from {
+    transform: translateY(-100%);
   }
-  100% {
+  to {
     transform: translateY(0);
   }
 }
@@ -52,12 +53,25 @@
 .animate-scrollLeft {
   animation: scrollLeft linear infinite;
 }
+
 .animate-scrollRight {
   animation: scrollRight linear infinite;
 }
+
 .animate-scrollUp {
   animation: scrollUp linear infinite;
 }
+
 .animate-scrollDown {
   animation: scrollDown linear infinite;
+}
+
+/* Optional: Pause on hover (desktop only) */
+@media (hover: hover) {
+  .animate-scrollLeft:hover,
+  .animate-scrollRight:hover,
+  .animate-scrollUp:hover,
+  .animate-scrollDown:hover {
+    animation-play-state: paused;
+  }
 }
