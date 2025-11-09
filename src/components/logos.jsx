@@ -125,6 +125,7 @@
 //   );
 
 // }
+
 import React, { useState, useEffect } from "react";
 
 // --- LOGO DATA ---
@@ -168,7 +169,7 @@ function SmoothLogoRow({ logos, direction = "left", speed = 30 }) {
         className={`flex gap-12 animate-${moveDir}`}
         style={{ animationDuration: scrollSpeed }}
       >
-        {[...logos, ...logos].map((logo, i) => (
+        {[...logos, ...logos, ...logos].map((logo, i) => (
           <img
             key={i}
             src={logo}
@@ -192,7 +193,7 @@ function SmoothLogoColumn({ logos, direction = "down", speed = 30 }) {
         className={`flex flex-col gap-8 animate-${moveDir}`}
         style={{ animationDuration: scrollSpeed }}
       >
-        {[...logos, ...logos].map((logo, i) => (
+        {[...logos, ...logos, ...logos].map((logo, i) => (
           <img
             key={i}
             src={logo}
@@ -221,9 +222,9 @@ export default function Clients() {
 
       {isMobile ? (
         <div className="flex justify-center">
-          <SmoothLogoColumn logos={column1} direction="down" speed={20} />
-          <SmoothLogoColumn logos={column2} direction="up" speed={20} />
-          <SmoothLogoColumn logos={column3} direction="down" speed={20} />
+          <SmoothLogoColumn logos={column1} direction="down" speed={25} />
+          <SmoothLogoColumn logos={column2} direction="up" speed={25} />
+          <SmoothLogoColumn logos={column3} direction="down" speed={25} />
         </div>
       ) : (
         <div className="container mx-auto px-4 flex flex-col gap-6">
