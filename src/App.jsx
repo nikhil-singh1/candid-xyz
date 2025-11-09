@@ -25,6 +25,7 @@ import ManageCases from './pages/ManageCases';
 import CaseView from './pages/CaseView';
 import RFPForm from './pages/RFPForm';
 import RFPList from './pages/RFPList';
+import { PrivacyPolicy, TermsAndConditions } from "./pages/policies";
 
 
 export default function App() {
