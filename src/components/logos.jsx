@@ -128,122 +128,9 @@
 
 
 
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-// // --- LOGO DATA ---
-// const logos = [
-//   "/ACCENTURE.png",
-//   "/DELL.png",
-//   "/Stanford.png",
-//   "/CHI.png",
-//   "malai.jpeg",
-//   "manchester.jpeg",
-//   "hsc.jpeg",
-//   "fortis.jpeg",
-//   "/Cleaveland.png",
-//   "/NHS.png",
-//   "/FairyHealth.png",
-//   "/Deloitee.png",
-//   "/Royal Devon.png",
-//   "/Dubai Health.png",
-// ];
-
-// // --- Hook to detect mobile ---
-// const useIsMobile = (breakpoint = 768) => {
-//   const [isMobile, setIsMobile] = useState(false);
-//   useEffect(() => {
-//     const check = () => setIsMobile(window.innerWidth < breakpoint);
-//     check();
-//     window.addEventListener("resize", check);
-//     return () => window.removeEventListener("resize", check);
-//   }, [breakpoint]);
-//   return isMobile;
-// };
-
-// // --- Smooth horizontal infinite scroll ---
-// function SmoothLogoRow({ logos, direction = "left", speed = 30 }) {
-//   const scrollSpeed = `${speed}s`;
-//   const moveDir = direction === "left" ? "scrollLeft" : "scrollRight";
-
-//   return (
-//     <div className="w-full overflow-hidden py-6 relative">
-//       <div
-//         className={`flex gap-12 animate-${moveDir}`}
-//         style={{ animationDuration: scrollSpeed }}
-//       >
-//         {[...logos, ...logos, ...logos].map((logo, i) => (
-//           <img
-//             key={i}
-//             src={logo}
-//             alt="client logo"
-//             className="h-24 w-auto object-contain flex-shrink-0"
-//           />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// // --- Smooth vertical infinite scroll for mobile ---
-// function SmoothLogoColumn({ logos, direction = "down", speed = 30 }) {
-//   const scrollSpeed = `${speed}s`;
-//   const moveDir = direction === "down" ? "scrollDown" : "scrollUp";
-
-//   return (
-//     <div className="overflow-hidden h-[400px] w-40 mx-2 md:mx-4 relative">
-//       <div
-//         className={`flex flex-col gap-8 animate-${moveDir}`}
-//         style={{ animationDuration: scrollSpeed }}
-//       >
-//         {[...logos, ...logos, ...logos].map((logo, i) => (
-//           <img
-//             key={i}
-//             src={logo}
-//             alt="client logo"
-//             className="h-32 w-auto object-contain"
-//           />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// // --- MAIN COMPONENT ---
-// export default function Clients() {
-//   const isMobile = useIsMobile();
-
-//   const column1 = logos.slice(0, 5);
-//   const column2 = logos.slice(5, 10);
-//   const column3 = logos.slice(10, 14);
-
-//   return (
-//     <section className="py-10 bg-white">
-//       <h2 className="text-center text-2xl md:text-4xl font-bold mb-8 px-4">
-//         Our Team's Experience Comes From
-//       </h2>
-
-//       {isMobile ? (
-//         <div className="flex justify-center">
-//           <SmoothLogoColumn logos={column1} direction="down" speed={25} />
-//           <SmoothLogoColumn logos={column2} direction="up" speed={25} />
-//           <SmoothLogoColumn logos={column3} direction="down" speed={25} />
-//         </div>
-//       ) : (
-//         <div className="container mx-auto px-4 flex flex-col gap-6">
-//           <SmoothLogoRow logos={column1} direction="left" speed={40} />
-//           <SmoothLogoRow logos={column2} direction="right" speed={40} />
-//           <SmoothLogoRow logos={column3} direction="left" speed={40} />
-//         </div>
-//       )}
-//     </section>
-//   );
-// }
-
-
-
-
-import React, { useEffect, useRef } from "react";
-
+// --- LOGO DATA ---
 const logos = [
   "/ACCENTURE.png",
   "/DELL.png",
@@ -261,78 +148,96 @@ const logos = [
   "/Dubai Health.png",
 ];
 
-const InfiniteScrollRow = ({ logos, speed = 0.3 }) => {
-  const containerRef = useRef(null);
-  const group1Ref = useRef(null);
-  const group2Ref = useRef(null);
-
+// --- Hook to detect mobile ---
+const useIsMobile = (breakpoint = 768) => {
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const container = containerRef.current;
-    const g1 = group1Ref.current;
-    const g2 = group2Ref.current;
+    const check = () => setIsMobile(window.innerWidth < breakpoint);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpoint]);
+  return isMobile;
+};
 
-    let x = 0;
-    let width = g1.scrollWidth;
-    let reqId;
-
-    const animate = () => {
-      x -= speed;
-      if (x <= -width) {
-        // Move first group behind the second instantly (no visible reset)
-        x += width;
-      }
-      container.style.transform = `translateX(${x}px)`;
-      reqId = requestAnimationFrame(animate);
-    };
-
-    reqId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(reqId);
-  }, [speed]);
+// --- Smooth horizontal infinite scroll ---
+function SmoothLogoRow({ logos, direction = "left", speed = 30 }) {
+  const scrollSpeed = `${speed}s`;
+  const moveDir = direction === "left" ? "scrollLeft" : "scrollRight";
 
   return (
     <div className="w-full overflow-hidden py-6 relative">
       <div
-        ref={containerRef}
-        className="flex gap-12 will-change-transform"
-        style={{ transform: "translateX(0)" }}
+        className={`flex gap-12 animate-${moveDir}`}
+        style={{ animationDuration: scrollSpeed }}
       >
-        <div ref={group1Ref} className="flex gap-12">
-          {logos.map((logo, i) => (
-            <img
-              key={i}
-              src={logo}
-              alt="client"
-              className="h-24 w-auto object-contain"
-            />
-          ))}
-        </div>
-        <div ref={group2Ref} className="flex gap-12">
-          {logos.map((logo, i) => (
-            <img
-              key={i}
-              src={logo}
-              alt="client"
-              className="h-24 w-auto object-contain"
-            />
-          ))}
-        </div>
+        {[...logos, ...logos, ...logos].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt="client logo"
+            className="h-24 w-auto object-contain flex-shrink-0"
+          />
+        ))}
       </div>
     </div>
   );
-};
+}
 
+// --- Smooth vertical infinite scroll for mobile ---
+function SmoothLogoColumn({ logos, direction = "down", speed = 30 }) {
+  const scrollSpeed = `${speed}s`;
+  const moveDir = direction === "down" ? "scrollDown" : "scrollUp";
+
+  return (
+    <div className="overflow-hidden h-[400px] w-40 mx-2 md:mx-4 relative">
+      <div
+        className={`flex flex-col gap-8 animate-${moveDir}`}
+        style={{ animationDuration: scrollSpeed }}
+      >
+        {[...logos, ...logos, ...logos].map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt="client logo"
+            className="h-32 w-auto object-contain"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// --- MAIN COMPONENT ---
 export default function Clients() {
+  const isMobile = useIsMobile();
+
+  const column1 = logos.slice(0, 5);
+  const column2 = logos.slice(5, 10);
+  const column3 = logos.slice(10, 14);
+
   return (
     <section className="py-10 bg-white">
       <h2 className="text-center text-2xl md:text-4xl font-bold mb-8 px-4">
         Our Team's Experience Comes From
       </h2>
 
-      <div className="container mx-auto px-4 flex flex-col gap-6">
-        <InfiniteScrollRow logos={logos.slice(0, 5)} speed={0.4} />
-        <InfiniteScrollRow logos={logos.slice(5, 10)} speed={0.4} />
-        <InfiniteScrollRow logos={logos.slice(10, 14)} speed={0.4} />
-      </div>
+      {isMobile ? (
+        <div className="flex justify-center">
+          <SmoothLogoColumn logos={column1} direction="down" speed={25} />
+          <SmoothLogoColumn logos={column2} direction="up" speed={25} />
+          <SmoothLogoColumn logos={column3} direction="down" speed={25} />
+        </div>
+      ) : (
+        <div className="container mx-auto px-4 flex flex-col gap-6">
+          <SmoothLogoRow logos={column1} direction="left" speed={40} />
+          <SmoothLogoRow logos={column2} direction="right" speed={40} />
+          <SmoothLogoRow logos={column3} direction="left" speed={40} />
+        </div>
+      )}
     </section>
   );
 }
+
+
+
