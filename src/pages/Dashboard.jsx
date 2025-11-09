@@ -145,7 +145,8 @@ import {
   PlusCircle,
   ArrowRight,
   Users,
-  BookCopy, // --- ADDED: New icon for case studies ---
+  BookCopy, 
+  ClipboardList,
 } from 'lucide-react';
 
 const StatCard = ({ icon, title, value, color }) => (
@@ -347,6 +348,7 @@ export default function Dashboard() {
   </div>
   );
 }
+
 
 
 
