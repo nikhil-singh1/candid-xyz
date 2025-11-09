@@ -146,7 +146,7 @@ import {
   ArrowRight,
   Users,
   BookCopy, 
-  ClipboardList,
+  Clipboard,
 } from 'lucide-react';
 
 const StatCard = ({ icon, title, value, color }) => (
@@ -295,39 +295,16 @@ export default function Dashboard() {
 
           {/* --- ADDED: RFP Stat Card --- */}
           <StatCard
-            icon={<ClipboardList className="text-green-800" size={24} />}
+            icon={<Clipboard className="text-green-800" size={24} />}
             title="RFP Submissions"
             value={rfpCount}
             color="bg-green-100"
           />
         </div>
 
-        {/* Management Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <ActionCard
-            icon={<FileText className="text-teal-600" size={24} />}
-            title="Manage Articles"
-            description="View, edit, or delete existing articles."
-            to="/admin/posts"
-            buttonText="View All Articles"
-          />
-          <ActionCard
-            icon={<BookCopy className="text-blue-600" size={24} />}
-            title="Manage Case Studies"
-            description="View, edit, or delete existing case studies."
-            to="/admin/cases"
-            buttonText="View Case Studies"
-          />
-          <ActionCard
-            icon={<Mail className="text-purple-600" size={24} />}
-            title="Manage Contacts"
-            description="View all customer queries submitted through the website."
-            to="/admin/contact"
-            buttonText="View Contacts"
-          />
           {/* --- ADDED: RFP Management Card --- */}
           <ActionCard
-            icon={<ClipboardList className="text-green-600" size={24} />}
+            icon={<Clipboard className="text-green-600" size={24} />}
             title="Manage RFP Submissions"
             description="View all submitted Requests for Proposals (RFPs)."
             to="/admin/rfp"
@@ -348,6 +325,7 @@ export default function Dashboard() {
   </div>
   );
 }
+
 
 
 
