@@ -194,6 +194,10 @@ export default function Dashboard() {
       .then((cases) => setCaseCount(cases.length))
       .catch((err) => console.error('Failed to fetch cases:', err));
 
+     getRFPs()
+      .then((rfps) => setRfpCount(rfps.length))
+      .catch((err) => console.error('Failed to fetch RFPs:', err));
+
     getContacts()
       .then((contacts) => setContactCount(contacts.length))
       .catch((err) => console.error('Failed to fetch contacts:', err));
@@ -326,6 +330,7 @@ export default function Dashboard() {
   </div>
   );
 }
+
 
 
 
