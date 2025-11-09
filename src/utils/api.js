@@ -283,3 +283,31 @@ export const deleteCase = async (id) => {
   return res.json();
 };
 
+
+/* ------------------------ RFP FORM ------------------------ */
+
+// Public – Submit a new RFP form
+export const createRFP = async (rfpData) => {
+  const res = await fetch(`${API_URL}/rfp`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(rfpData),
+  });
+
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.msg || "Failed to submit RFP");
+  return data;
+};
+
+// Protected – View all RFP submissions
+export const getRFPs = async () => {
+  const res = await fetch(`${API_URL}/rfp`, {
+    headers: { Authorization: `Bearer ${getToken()}` },
+  });
+
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.msg || "Failed to fetch RFPs");
+  return data;
+};
+
+
