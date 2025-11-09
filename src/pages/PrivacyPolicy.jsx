@@ -123,7 +123,7 @@ export default function PrivacyPolicy() {
             <p>
               Candid Healthsystems Consultants Ltd.<br />
               Registered Office: Flat 18, Chiltern Court, 1 Marri Street, Watford, WD24 5FZ<br />
-              Email: info@candidhealthsystems.co.uk
+              Email: contact@candidhsc.co.uk
             </p>
           </Section>
         </main>
