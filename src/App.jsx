@@ -25,6 +25,8 @@ import ManageCases from './pages/ManageCases';
 import CaseView from './pages/CaseView';
 import RFPForm from './pages/RFPForm';
 import RFPList from './pages/RFPList';
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 // import { PrivacyPolicy, TermsAndConditions } from "./pages/policies";
 
 
@@ -59,6 +61,8 @@ export default function App() {
         <Route path="/rfp" element={<RFPForm />} />
         // Admin route (protected)
         <Route path="/admin/rfp" element={<RFPList />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
         {/* <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} /> */}
 
