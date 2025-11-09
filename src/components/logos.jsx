@@ -242,10 +242,8 @@
 
 
 
+import React, { useEffect, useRef } from "react";
 
-import React, { useState, useEffect, useRef } from "react";
-
-// --- LOGO DATA ---
 const logos = [
   "/ACCENTURE.png",
   "/DELL.png",
@@ -263,118 +261,78 @@ const logos = [
   "/Dubai Health.png",
 ];
 
-// --- Hook to detect mobile ---
-const useIsMobile = (breakpoint = 768) => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < breakpoint);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, [breakpoint]);
-  return isMobile;
-};
-
-// --- Infinite horizontal scroll using JS (no jump) ---
-const SmoothLogoRow = ({ logos, speed = 0.3, reverse = false }) => {
+const InfiniteScrollRow = ({ logos, speed = 0.3 }) => {
   const containerRef = useRef(null);
+  const group1Ref = useRef(null);
+  const group2Ref = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    let offset = 0;
+    const g1 = group1Ref.current;
+    const g2 = group2Ref.current;
+
+    let x = 0;
+    let width = g1.scrollWidth;
     let reqId;
 
-    const step = () => {
-      offset += reverse ? -speed : speed;
-      if (Math.abs(offset) >= container.scrollWidth / 2) offset = 0;
-      container.style.transform = `translateX(${-offset}px)`;
-      reqId = requestAnimationFrame(step);
+    const animate = () => {
+      x -= speed;
+      if (x <= -width) {
+        // Move first group behind the second instantly (no visible reset)
+        x += width;
+      }
+      container.style.transform = `translateX(${x}px)`;
+      reqId = requestAnimationFrame(animate);
     };
 
-    reqId = requestAnimationFrame(step);
+    reqId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(reqId);
-  }, [speed, reverse]);
+  }, [speed]);
 
   return (
     <div className="w-full overflow-hidden py-6 relative">
-      <div ref={containerRef} className="flex gap-12 will-change-transform">
-        {[...logos, ...logos].map((logo, i) => (
-          <img
-            key={i}
-            src={logo}
-            alt="client logo"
-            className="h-24 w-auto object-contain flex-shrink-0"
-          />
-        ))}
+      <div
+        ref={containerRef}
+        className="flex gap-12 will-change-transform"
+        style={{ transform: "translateX(0)" }}
+      >
+        <div ref={group1Ref} className="flex gap-12">
+          {logos.map((logo, i) => (
+            <img
+              key={i}
+              src={logo}
+              alt="client"
+              className="h-24 w-auto object-contain"
+            />
+          ))}
+        </div>
+        <div ref={group2Ref} className="flex gap-12">
+          {logos.map((logo, i) => (
+            <img
+              key={i}
+              src={logo}
+              alt="client"
+              className="h-24 w-auto object-contain"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-// --- Infinite vertical scroll using JS (no jump) ---
-const SmoothLogoColumn = ({ logos, speed = 0.3, reverse = false }) => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    let offset = 0;
-    let reqId;
-
-    const step = () => {
-      offset += reverse ? -speed : speed;
-      if (Math.abs(offset) >= container.scrollHeight / 2) offset = 0;
-      container.style.transform = `translateY(${-offset}px)`;
-      reqId = requestAnimationFrame(step);
-    };
-
-    reqId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(reqId);
-  }, [speed, reverse]);
-
-  return (
-    <div className="overflow-hidden h-[400px] w-40 mx-2 md:mx-4 relative">
-      <div ref={containerRef} className="flex flex-col gap-8 will-change-transform">
-        {[...logos, ...logos].map((logo, i) => (
-          <img
-            key={i}
-            src={logo}
-            alt="client logo"
-            className="h-32 w-auto object-contain"
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-// --- MAIN COMPONENT ---
 export default function Clients() {
-  const isMobile = useIsMobile();
-
-  const column1 = logos.slice(0, 5);
-  const column2 = logos.slice(5, 10);
-  const column3 = logos.slice(10, 14);
-
   return (
     <section className="py-10 bg-white">
       <h2 className="text-center text-2xl md:text-4xl font-bold mb-8 px-4">
         Our Team's Experience Comes From
       </h2>
 
-      {isMobile ? (
-        <div className="flex justify-center">
-          <SmoothLogoColumn logos={column1} speed={0.2} />
-          <SmoothLogoColumn logos={column2} speed={0.2} reverse />
-          <SmoothLogoColumn logos={column3} speed={0.2} />
-        </div>
-      ) : (
-        <div className="container mx-auto px-4 flex flex-col gap-6">
-          <SmoothLogoRow logos={column1} speed={0.4} />
-          <SmoothLogoRow logos={column2} speed={0.4} reverse />
-          <SmoothLogoRow logos={column3} speed={0.4} />
-        </div>
-      )}
+      <div className="container mx-auto px-4 flex flex-col gap-6">
+        <InfiniteScrollRow logos={logos.slice(0, 5)} speed={0.4} />
+        <InfiniteScrollRow logos={logos.slice(5, 10)} speed={0.4} />
+        <InfiniteScrollRow logos={logos.slice(10, 14)} speed={0.4} />
+      </div>
     </section>
   );
 }
-
