@@ -53,6 +53,9 @@ export default function App() {
         <Route path="/admin/edit/:slug" element={<EditPost />} />
         <Route path="/admin/contact" element={<ContactPage />} />
         <Route path="/admin/users" element={<UsersPage/>} />
+        <Route path="/rfp" element={<RFPForm />} />
+        // Admin route (protected)
+        <Route path="/admin/rfp" element={<RFPList />} />
 
           
     </Routes>
