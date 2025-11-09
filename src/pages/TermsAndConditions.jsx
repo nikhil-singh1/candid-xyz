@@ -79,7 +79,7 @@ export default function TermsAndConditions() {
 
           <Section id="contact" title="6. Contact">
             <p>
-              For questions regarding these Terms, contact us at info@candidhealthsystems.co.uk or via
+              For questions regarding these Terms, contact us at contact@candidhsc.co.uk or via
               the details in our Privacy Policy.
             </p>
           </Section>
