@@ -31,7 +31,8 @@
 //           <div>
 //             <h3 className="text-lg font-semibold text-gray-300 mb-4">Resources</h3>
 //             <ul className="space-y-2">
-//               <li><a href="/case_study" className="hover:text-white transition-colors duration-200 text-gray-400">Case Study and Articles</a></li>
+//               <li><a href="case_study" className="hover:text-white transition-colors duration-200 text-gray-400">Case Study s</a></li>
+     
 //             </ul>
 //           </div>
 
@@ -161,7 +162,13 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="/case_study" className="hover:text-white transition-colors duration-200 text-gray-400">
-                  Case Study and Articles
+                  Case Study
+                </a>
+              </li>
+
+              <li>
+                <a href="/articles" className="hover:text-white transition-colors duration-200 text-gray-400">
+                  Articles
                 </a>
               </li>
             </ul>
@@ -230,6 +237,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 
