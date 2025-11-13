@@ -52,7 +52,7 @@ export default function CaseView() {
                   <img
                     src={section.image}
                     alt="Section"
-                    className="w-full md:w-[420px] h-[210px] md:h-[350px] object-fit rounded-lg shadow-lg"
+                    className="w-full md:w-[550px] h-[210px] md:h-[360px] object-fit rounded-lg shadow-lg"
                   />
                 </>
               )}
