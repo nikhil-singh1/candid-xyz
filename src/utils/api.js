@@ -311,3 +311,18 @@ export const getRFPs = async () => {
 };
 
 
+export const parseDocument = async (file) => {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await fetch(`${API_URL}/parse-doc`, {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to parse document");
+  }
+
+  return res.json();
+};
