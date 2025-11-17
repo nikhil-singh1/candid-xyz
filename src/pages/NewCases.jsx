@@ -541,67 +541,56 @@ export default function NewCase() {
   // Submit
   // ---------------------------
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      const filesToUpload = [];
-      if (heroImage) filesToUpload.push(heroImage);
+  try {
+    const heroFile = heroImage ? [heroImage] : [];
+    const sectionFiles = sections
+      .filter(s => s.image)
+      .map(s => s.image);
 
-      sections.forEach((sec) => {
-        if (sec.image) filesToUpload.push(sec.image);
-      });
+    const allFiles = [...heroFile, ...sectionFiles];
+    const result = allFiles.length ? await uploadImages(allFiles) : { urls: [] };
 
-      let uploadedUrls = [];
-      if (filesToUpload.length > 0) {
-        const res = await uploadImages(filesToUpload);
-        uploadedUrls = res.urls || [];
-      }
+    const uploadedUrls = result.urls || [];
 
-      let urlIndex = 0;
-      let heroUrl = "";
+    let index = 0;
+    const heroUrl = heroImage ? uploadedUrls[index++] : "";
 
-      if (heroImage) {
-        heroUrl = uploadedUrls[urlIndex++] || "";
-      }
+    const sectionData = sections
+      .map(sec => {
+        let url = "";
+        if (sec.image) url = uploadedUrls[index++] || "";
 
-      const sectionData = sections.map((sec) => {
-        let imageUrl = "";
-        if (sec.image) {
-          imageUrl = uploadedUrls[urlIndex++] || "";
-        }
-        return {
-          text: sec.text === "<p></p>" ? "" : sec.text,
-          image: imageUrl,
-        };
-      });
+        const cleanedText =
+          sec.text?.trim() === "<p></p>" ? "" : sec.text?.trim();
 
-      const slug = title
-        .toLowerCase()
-        .replace(/\s+/g, "-")
-        .replace(/[^\w-]+/g, "");
+        return { text: cleanedText, image: url };
+      })
+      .filter(s => s.text || s.image); // remove empty sections
 
-      const postData = {
-        title,
-        slug,
-        heroImage: heroUrl,
-        sections: sectionData,
-      };
+    const payload = {
+      title,
+      heroImage: heroUrl,
+      sections: sectionData,
+    };
 
-      const post = await createCase(postData);
+    const post = await createCase(payload);
 
-      if (post?._id) {
-        navigate("/case-study");
-      } else {
-        alert(post?.msg || "Failed to create case study");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("An error occurred");
-    } finally {
-      setLoading(false);
+    if (post._id) {
+      navigate("/case_study");
+    } else {
+      alert(post.msg || "Failed to create case study");
     }
-  };
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
