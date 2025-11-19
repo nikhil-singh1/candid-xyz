@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getContacts } from "../utils/api";
+import BackButton from "../components/BackButton";
 
 const ContactPage = () => {
   const [contacts, setContacts] = useState([]);
@@ -26,6 +27,7 @@ const ContactPage = () => {
 
   return (
     <div className="p-6 text-[var(--color-text-primary)]">
+       <BackButton />
       <h2 className="text-3xl font-bold mb-6  bg-clip-text text-black">
         Customer Queries
       </h2>

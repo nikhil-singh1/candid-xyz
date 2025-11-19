@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getRFPs } from "../utils/api";
+import BackButton from "../components/BackButton";
 
 export default function RFPList() {
   const [rfps, setRFPs] = useState([]);
@@ -24,6 +25,7 @@ export default function RFPList() {
 
   return (
     <div className="p-6 text-gray-800">
+       <BackButton />
       <h2 className="text-3xl font-bold mb-6 text-teal-700">RFP Submissions</h2>
 
       {rfps.length === 0 ? (

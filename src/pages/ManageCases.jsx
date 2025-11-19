@@ -4,6 +4,7 @@ import { getCases, deleteCase } from '../utils/api';
 import { Link } from 'react-router-dom';
 // --- MODIFIED: Use BookCopy icon ---
 import { BookCopy, Edit, Trash2 } from 'lucide-react';
+import BackButton from '../components/BackButton';
 
 // --- MODIFIED: Renamed component ---
 export default function ManageCases() {
@@ -38,6 +39,7 @@ export default function ManageCases() {
   return (
     <div className="bg-slate-100 min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
+       <BackButton />
         <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-3 mb-8">
           {/* --- MODIFIED: Icon and Title --- */}
           <BookCopy className="text-blue-600" />

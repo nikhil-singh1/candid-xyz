@@ -4,6 +4,7 @@ import { getCase, updateCase, uploadImages } from "../utils/api";
 import { useNavigate, useParams } from "react-router-dom";
 import { Upload, Image as ImageIcon, PlusCircle, Loader2 } from "lucide-react";
 import TiptapEditor from "../components/TiptapEditor";
+import BackButton from "../components/BackButton";
 
 // --- MODIFIED: Renamed component ---
 export default function EditCase() {
@@ -97,6 +98,7 @@ export default function EditCase() {
   // JSX is nearly identical to NewPost.jsx, but values are populated from state
   return (
     <div className="p-6 max-w-4xl mx-auto">
+       <BackButton />
       {/* --- MODIFIED: Title --- */}
       <h1 className="text-3xl font-bold mb-6 text-gray-800">✍️ Edit Case Study</h1>
       <form onSubmit={handleSubmit} className="space-y-8">

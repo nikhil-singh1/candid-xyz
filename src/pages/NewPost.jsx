@@ -3,6 +3,7 @@ import { createPost, uploadImages } from "../utils/api";
 import { useNavigate } from "react-router-dom";
 import { Upload, Image as ImageIcon, PlusCircle, Loader2 } from "lucide-react";
 import TiptapEditor from "../components/TiptapEditor"; // Import your new Tiptap component
+import BackButton from "../components/BackButton";
 
 export default function NewPost() {
   const [title, setTitle] = useState("");
@@ -83,6 +84,7 @@ export default function NewPost() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
+       <BackButton />
       <h1 className="text-3xl font-bold mb-6 text-gray-800">✍️ Create New Post</h1>
       <form onSubmit={handleSubmit} className="space-y-8">
         {/* Title */}

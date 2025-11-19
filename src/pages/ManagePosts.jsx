@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getPosts, deletePost } from '../utils/api';
 import { Link } from 'react-router-dom';
 import { FileText, Edit, Trash2 } from 'lucide-react';
+import BackButton from '../components/BackButton';
 
 export default function ManagePosts() {
   const [posts, setPosts] = useState([]);
@@ -32,6 +33,7 @@ export default function ManagePosts() {
   return (
     <div className="bg-slate-100 min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
+       <BackButton />
         <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-3 mb-8">
           <FileText className="text-teal-600" />
           Manage Posts

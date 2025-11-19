@@ -6,6 +6,7 @@ import {
   deleteUser,
 } from "../utils/api";
 import { Plus, Trash, Edit, X } from "lucide-react";
+import BackButton from "../components/BackButton";
 
 export default function UsersPage() {
   const [users, setUsers] = useState([]);
@@ -69,6 +70,7 @@ export default function UsersPage() {
 
   return (
     <div className="p-6">
+       <BackButton />
       <h1 className="text-2xl font-bold mb-6">User Management</h1>
 
       {/* Create User */}
